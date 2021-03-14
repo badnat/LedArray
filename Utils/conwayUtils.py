@@ -103,8 +103,6 @@ def getNumLiveNeighbors(array, x, y):
                 n +=1
         return n
 
-    return n
-
 # Set up functions
 # ======================
 
