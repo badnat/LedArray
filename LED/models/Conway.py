@@ -1,5 +1,6 @@
 from Model import Model
 import numpy as np
+import sys
 # Model
 class Conway(Model):
     def __init__(self, width: int):

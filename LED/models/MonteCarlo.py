@@ -1,5 +1,6 @@
 from Model import Model
 import numpy as np
+import sys
 # Model
 class MonteCarlo(Model):
     def __init__(self, width: int):
