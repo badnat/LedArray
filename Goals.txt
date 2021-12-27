@@ -1,6 +1,0 @@
-Goals:
-    Have everything be OOP
-    Have a website that implements MVC
-    Make it cool
-Stretch:
-    Implement some of the slower code in C
