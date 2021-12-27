@@ -19,6 +19,9 @@ class Conway(Model):
     def setup(self, param: str) -> None:
         self.random(0.25)
 
+    def help(self):
+        print("possible set up params for Conway include " + str(list(setups.keys())))
+
 
     # ** GAME LOGIC **
     # Returns true if alive, false if dead
@@ -125,6 +128,7 @@ class Conway(Model):
             return n
 
 # **Set ups**
+    setups = {"random": random, "glider": glider}
     # randomly set cells to dead or alive
     def random(self, weight: float):
         for i in range(self.width):

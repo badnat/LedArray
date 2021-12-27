@@ -7,10 +7,13 @@ class Model:
         self.pix2d: np.ndarray = np.zeros((width, width, 3))
         self.width: int = width
     
-    def update():
+    def update(self):
         pass
     
-    def setup(param: str):
+    def setup(self, param: str):
+        pass
+
+    def help(self):
         pass
 
     # each model needs an update method and a setup method
