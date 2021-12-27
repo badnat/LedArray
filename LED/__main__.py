@@ -21,15 +21,8 @@ def main():
         m: Model = models.get(param)(16)
         v: View = View(16, 0.05, board.D12)
         c: Controller = Controller(m, v)
-        c.setup(sys.argv[2])
-        # try:
-        #     if (sys.argv[2] == "help"):
-        #         m.help()
-        #     else:
-        #         c.setup(sys.argv[2])
-        # except IndexError:
-        #     print(param + " Needs more params, use 'python3 LED " + param + " help' for a list of params")
-        #     return
+        c.setup()
+        # handle setup args later
 
         time.sleep(1)
         try:
