@@ -10,7 +10,7 @@ class Model:
     def update(self):
         pass
     
-    def setup(self, param: str):
+    def setup(self):
         pass
 
     def help(self):

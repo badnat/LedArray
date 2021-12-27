@@ -15,8 +15,15 @@ class Conway(Model):
                     self.setAlive(pix2, i, j, self.color)
         self.pix2d = pix2
 
-    def setup(self, param: str) -> None:
-        self.setups.get(param)(self)
+    def setup(self) -> None:
+        try:
+            if (sys.argv[2] == "help"):
+                self.help()
+            else:
+                self.setups.get(sys.argv[2])(self)
+        except IndexError:
+            print("Conway Needs more params, use 'python3 LED Conway help' for a list of params")
+            return
 
     # **Set ups**
     # randomly set cells to dead or alive

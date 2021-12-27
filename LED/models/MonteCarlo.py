@@ -11,7 +11,7 @@ class MonteCarlo(Model):
                 self.pix2d[i, j] = self.mc()
 
     #no set up needed for this bad boy
-    def setup(self,param: str) -> None:
+    def setup(self) -> None:
         pass
     
     def help(self) -> None:
