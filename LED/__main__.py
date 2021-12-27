@@ -18,10 +18,7 @@ def main():
     if (param == "help"):
         print("possible params include : " + str(list(models.keys())))
     else:
-        try:
-            m: Model = models.get(param)(16)
-        except:
-            return
+        m: Model = models.get(param)(16)
         v: View = View(16, 0.05, board.D12)
         c: Controller = Controller(m, v)
         c.setup()
@@ -30,7 +27,10 @@ def main():
         time.sleep(1)
         try:
             while 1:
-                c.update()
+                try:
+                    c.update()
+                except:
+                    break
                 time.sleep(0.2)
         except KeyboardInterrupt:
             c.clear()
