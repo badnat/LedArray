@@ -28,6 +28,7 @@ def main():
                 c.setup(sys.argv[2])
         except IndexError:
             print(param + " Needs more params, use 'python3 LED " + param + " help' for a list of params")
+            return
 
         time.sleep(1)
         try:
