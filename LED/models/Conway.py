@@ -17,7 +17,7 @@ class Conway(Model):
         self.pix2d = pix2
 
     def setup(self, param: str) -> None:
-        self.random(0.25)
+        self.setups.get(param)()
 
     def help(self):
         print("possible set up params for Conway include " + str(list(setups.keys())))
@@ -129,10 +129,10 @@ class Conway(Model):
 
 # **Set ups**
     # randomly set cells to dead or alive
-    def random(self, weight: float):
+    def random(self):
         for i in range(self.width):
             for j in range(self.width):
-                if(np.random.uniform(0, 1) < weight):
+                if(np.random.uniform(0, 1) < 0.25):
                     self.pix2d[i, j] = self.color
     # sets up a glider in the top left corner
     def glider(self):
