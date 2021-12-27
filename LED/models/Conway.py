@@ -19,6 +19,23 @@ class Conway(Model):
     def setup(self, param: str) -> None:
         self.setups.get(param)()
 
+    # **Set ups**
+    # randomly set cells to dead or alive
+    def random(self):
+        for i in range(self.width):
+            for j in range(self.width):
+                if(np.random.uniform(0, 1) < 0.25):
+                    self.pix2d[i, j] = self.color
+    # sets up a glider in the top left corner
+    def glider(self):
+        self.pix2d[0, 1] = self.color
+        self.pix2d[1, 2] = self.color
+        self.pix2d[2, 0] = self.color
+        self.pix2d[2, 1] = self.color
+        self.pix2d[2, 2] = self.color
+
+    setups = {"random": random, "glider": glider}
+
     def help(self):
         print("possible set up params for Conway include " + str(list(setups.keys())))
 
@@ -126,20 +143,3 @@ class Conway(Model):
                 if self.getState(neigh):
                     n +=1
             return n
-
-# **Set ups**
-    # randomly set cells to dead or alive
-    def random(self):
-        for i in range(self.width):
-            for j in range(self.width):
-                if(np.random.uniform(0, 1) < 0.25):
-                    self.pix2d[i, j] = self.color
-    # sets up a glider in the top left corner
-    def glider(self):
-        self.pix2d[0, 1] = self.color
-        self.pix2d[1, 2] = self.color
-        self.pix2d[2, 0] = self.color
-        self.pix2d[2, 1] = self.color
-        self.pix2d[2, 2] = self.color
-
-    setups = {"random": random, "glider": glider}
