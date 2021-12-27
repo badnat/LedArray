@@ -1,1 +1,1 @@
-__all__ = ["Conway"]
+__all__ = ["Conway", "MonteCarlo"]
