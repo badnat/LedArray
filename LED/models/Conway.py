@@ -17,7 +17,7 @@ class Conway(Model):
         self.pix2d = pix2
 
     def setup(self, param: str) -> None:
-        self.setups.get(param)()
+        self.setups.get(param)(self)
 
     # **Set ups**
     # randomly set cells to dead or alive
