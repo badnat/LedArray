@@ -10,6 +10,7 @@ models = {"Conway": Conway}
 
 def main():
     param = "" + sys.argv[0]
+    print(param)
     if (param == "help"):
         print("possible params include : " + models.keys())
 
