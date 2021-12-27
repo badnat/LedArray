@@ -18,7 +18,7 @@ def main():
     if (param == "help"):
         print("possible params include : " + str(list(models.keys())))
     else:
-        m: Model = models[param](16)
+        m: Model = models.get(param)(16)
         v: View = View(16, 0.05, board.D12)
         c: Controller = Controller(m, v)
         c.random(0.25)
