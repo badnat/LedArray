@@ -14,6 +14,10 @@ class Conway(Model):
                     self.setAlive(pix2, i, j, self.color)
         self.pix2d = pix2
 
+    def setup(self, param: str) -> None:
+        self.random(0.25)
+
+
     # ** GAME LOGIC **
     # Returns true if alive, false if dead
     def getState(self, element) -> bool:

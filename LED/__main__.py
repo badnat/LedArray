@@ -21,7 +21,7 @@ def main():
         m: Model = models.get(param)(16)
         v: View = View(16, 0.05, board.D12)
         c: Controller = Controller(m, v)
-        c.random(0.25)
+        c.setup("future stuff")
 
         time.sleep(1)
         try:

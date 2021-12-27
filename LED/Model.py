@@ -10,7 +10,7 @@ class Model:
     def update():
         pass
     
-    def setup():
+    def setup(param: str):
         pass
 
     # each model needs an update method and a setup method
