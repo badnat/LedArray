@@ -22,7 +22,7 @@ def main():
         v: View = View(16, 0.05, board.D12)
         c: Controller = Controller(m, v)
         try:
-            if (argv[2] == "help"):
+            if (sys.argv[2] == "help"):
                 m.help()
             else:
                 c.setup(sys.argv[2])
