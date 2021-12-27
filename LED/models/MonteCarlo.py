@@ -23,8 +23,8 @@ class MonteCarlo(Model):
 # update Logic
     def mc(self):
         try:
-            self.offProb = sys.argv[2]
-            self.changeProb = sys.argv[3]
+            self.offProb = int(sys.argv[2])
+            self.changeProb = int(sys.argv[3])
         except IndexError:
             pass
         if (np.random.uniform(0, 1) * 100 < self.changeProb):
