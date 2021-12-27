@@ -7,6 +7,12 @@ class MonteCarlo(Model):
         Model.__init__(self, width)
         self.offProb: int = 0
         self.changeProb: int = 100
+        try:
+            if(sys.arv[2] == 'help'):
+                self.help()
+                pass
+        except IndexError:
+            pass
 
     def update(self) -> None:
         for i in range(self.width):
