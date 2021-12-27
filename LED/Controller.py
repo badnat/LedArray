@@ -17,6 +17,6 @@ class Controller:
         self.view.clear()
         return
 
-    def setup(self, param: str) -> None:
-        self.model.setup(param)
+    def setup(self) -> None:
+        self.model.setup()
         return
