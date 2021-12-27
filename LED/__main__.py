@@ -9,8 +9,9 @@ import sys
 models = {"Conway": Conway}
 
 def main():
+    param = ""
     try:
-        param = "" + sys.argv[1]
+        param = param + sys.argv[1]
     except IndexError:
         print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED Conway")
     if (param == "help"):
