@@ -1,10 +1,10 @@
 from Model import Model
 # Model
 class Conway(Model):
-    def __init__(self):
-        Model.__init__(self)
+    def __init__(self, width: int):
+        Model.__init__(self, width)
         color = (0, 255, 0)
-        
+
     def update(self) -> None:
         pix2: np.ndarray = np.zeros((self.width, self.width, 3))
         for i in range(self.width):
