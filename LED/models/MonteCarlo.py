@@ -8,7 +8,7 @@ class MonteCarlo(Model):
         self.offProb: int = 0
         self.changeProb: int = 100
         try:
-            if(sys.arv[2] == 'help'):
+            if(sys.argv[2] == 'help'):
                 self.help()
                 pass
         except IndexError:
