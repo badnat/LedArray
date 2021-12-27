@@ -18,7 +18,10 @@ def main():
     if (param == "help"):
         print("possible params include : " + str(list(models.keys())))
     else:
-        m: Model = models.get(param)(16)
+        try:
+            m: Model = models.get(param)(16)
+        except:
+            return
         v: View = View(16, 0.05, board.D12)
         c: Controller = Controller(m, v)
         c.setup()
