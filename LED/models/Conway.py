@@ -128,7 +128,6 @@ class Conway(Model):
             return n
 
 # **Set ups**
-    setups = {"random": random, "glider": glider}
     # randomly set cells to dead or alive
     def random(self, weight: float):
         for i in range(self.width):
@@ -142,3 +141,5 @@ class Conway(Model):
         self.pix2d[2, 0] = self.color
         self.pix2d[2, 1] = self.color
         self.pix2d[2, 2] = self.color
+
+    setups = {"random": random, "glider": glider}
