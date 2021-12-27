@@ -37,7 +37,7 @@ def main():
                 time.sleep(0.2)
         except KeyboardInterrupt:
             c.clear()
-            print("\n" + "has been interupted")
+            print("\n" + param + " has been interupted")
 
 if __name__ == "__main__":
     main()
