@@ -2,7 +2,6 @@ from Model import Model
 import numpy as np
 # Model
 class Conway(Model):
-
     def __init__(self, width: int):
         Model.__init__(self, width)
         self.color = (0, 255, 0)

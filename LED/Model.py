@@ -16,4 +16,4 @@ class Model:
     def help(self):
         pass
 
-    # each model needs an update method and a setup method
+    # each model needs an update method, setup method, and help method
