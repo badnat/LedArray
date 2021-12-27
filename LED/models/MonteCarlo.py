@@ -41,5 +41,7 @@ class MonteCarlo(Model):
                 g = int(np.random.uniform(0, 1) * 255)
                 b = int(np.random.uniform(0, 1) * 255)
                 return (r, g, b)
+        else:
+            return
 
     
