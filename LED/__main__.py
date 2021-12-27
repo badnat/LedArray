@@ -14,6 +14,7 @@ def main():
         param = param + sys.argv[1]
     except IndexError:
         print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED Conway")
+        return
     if (param == "help"):
         print("possible params include : " + str(list(models.keys())))
 
