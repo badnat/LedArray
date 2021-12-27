@@ -15,7 +15,7 @@ def main():
     except IndexError:
         print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED Conway")
     if (param == "help"):
-        print("possible params include : " + models.keys())
+        print("possible params include : " + str(models.keys()))
 
     # m: Model = models[sys.stdin](16)
     # v: View = View(16, 0.05, board.D12)
