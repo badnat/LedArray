@@ -9,7 +9,7 @@ import sys
 models = {"Conway": Conway}
 
 def main():
-    param = "" + sys.stdin[0]
+    param = "" + sys.argv[1]
     if (param == "help"):
         print("possible params include : " + models.keys())
 
