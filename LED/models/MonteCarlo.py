@@ -17,7 +17,7 @@ class MonteCarlo(Model):
     def update(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                self.pix2d[i, j] = self.mc()
+                self.pix2d[i, j] = self.mc(i, j)
 
     #no set up needed for this bad boy
     def setup(self) -> None:
@@ -27,21 +27,21 @@ class MonteCarlo(Model):
         print("This effect takes 2 params all probabilities from 0 to 100, <prob of led turning off> <prob of the led changing>")
 
 # update Logic
-    def mc(self):
+    def mc(self, i, j):
         try:
             self.offProb = int(sys.argv[2])
             self.changeProb = int(sys.argv[3])
         except IndexError:
             pass
-        if (np.random.uniform(0, 1) * 100 < self.changeProb):
-            if (np.random.uniform(0, 1) * 100 < self.offProb):
-                return (0, 0, 0)
-            else:
+        if (np.random.uniform(0, 1) * 100 < self.offProb):
+            return (0, 0, 0)
+        else:
+            if (np.random.uniform(0, 1) * 100 < self.changeProb):
                 r = int(np.random.uniform(0, 1) * 255)
                 g = int(np.random.uniform(0, 1) * 255)
                 b = int(np.random.uniform(0, 1) * 255)
                 return (r, g, b)
-        else:
-            return
+            else:
+                return self.pix2d[i, j]
 
     
