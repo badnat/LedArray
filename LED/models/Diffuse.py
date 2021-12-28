@@ -11,7 +11,7 @@ class Diffuse(Model):
     def update(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                self.d2A[i, j] = self.d2B[i, j] + self.diff(i, j)/400
+                self.d2A[i, j] = self.d2B[i, j] + self.diff(i, j)/16
                 self.pix2d[i, j] = (255 * self.d2A[i, j], 0, 255 * (1 - (self.d2A[i, j])))
         self.d2B = np.copy(self.d2A)
         print(self.d2A)
@@ -19,7 +19,7 @@ class Diffuse(Model):
     def setup(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                if(j <= 8):
+                if(j > 7):
                     self.d2A[i, j] = 1
                     self.d2B[i, j] = 1
                 else:
