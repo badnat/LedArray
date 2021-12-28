@@ -11,6 +11,15 @@ width = 16
 
 pix2d = np.zeros((width, width, 3))
 
+def update(pix2d, width):     
+        for i in range(width):
+            for j in range(width):
+                if i % 2 == 0:
+                    p[width * i + j] = pix2d[j, i].astype(int)
+                else:
+                    p[width * i + (width - 1 - j)] = pix2d[j, i].astype(int)
+        p.show()
+
 def main():
     try:
         bars = np.zeros((width)).astype(int)
@@ -31,12 +40,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-def update(pix2d, width):     
-        for i in range(width):
-            for j in range(width):
-                if i % 2 == 0:
-                    p[width * i + j] = pix2d[j, i].astype(int)
-                else:
-                    p[width * i + (width - 1 - j)] = pix2d[j, i].astype(int)
-        p.show()
