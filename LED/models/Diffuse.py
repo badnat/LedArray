@@ -11,7 +11,7 @@ class Diffuse(Model):
     def update(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                self.d2A[i, j] = self.2dA[i, j] + self.diff(i, j)
+                self.d2A[i, j] = self.d2A[i, j] + self.diff(i, j)
                 self.pix2d[i, j] = 255 * (self.d2A[i, j], 0, 1 - (self.d2A[i, j]))/40
         self.d2B = np.copy(self.d2A)
 
