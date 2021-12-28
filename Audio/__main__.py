@@ -4,6 +4,7 @@ import time
 import board
 import sys
 import neopixel
+import os
 
 pixPin = board.D12
 
@@ -27,8 +28,7 @@ def update(pix2d, width):
 def main():
     try:
         bars = np.zeros((width)).astype(int)
-        for i in range(width):
-            bars[i] = sys.argv[i+1]
+        bars = np.loadtxt(os.path.expanduser("~/LedArray/Audio/amps"), dtype=<class 'int'>)
         for j in range(width):
             for n in range(bars[j]):
                 pix2d[-1*(n+1) , j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
