@@ -34,7 +34,7 @@ def main():
                 #     c.update()
                 # except:
                 #     break
-                time.sleep(0.2)
+                # time.sleep(0.2)
                 c.update()
         except KeyboardInterrupt:
             c.clear()
