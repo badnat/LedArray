@@ -18,8 +18,6 @@ class Diffuse(Model):
             for j in range(self.width):
                 if(i <= 8):
                     self.pix2d[i, j] = (255, 0, 0)
-                else:
-                    self.pix2d[i, j] = (0, 0, 255)
     
     def help(self) -> None:
         print("This effect takes 2 params all probabilities from 0 to 100, <prob of led turning off> <prob of the led changing>")
