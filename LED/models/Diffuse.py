@@ -28,38 +28,38 @@ class Diffuse(Model):
     def diff(self, i, j):
         if(i == 0 and j == 0):
             n = -1 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i, j+1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(i == 0 and j == 15):
             n = -1 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i, j-1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(i == 15 and j == 15):
             n = -1 * self.pix2[i, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j-1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(i == 15 and j == 0):
             n = -1 * self.pix2[i, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j+1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(i == 0):
             n = -2 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i, j+1][0] + self.pix2[i, j-1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(i == 15):
             n = -2 * self.pix2[i, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j+1][0] + self.pix2[i, j-1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(j == 0):
             n = -2 * self.pix2[i, j][0] + self.pix2[i, j+1][0] + self.pix2[i+1, j][0] + self.pix2[i-1, j][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         elif(j == 15):
             n = -2 * self.pix2[i, j][0] + self.pix2[i, j-1][0] + self.pix2[i+1, j][0] + self.pix2[i-1, j][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
         else:
             n = -3 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j+1][0] + self.pix2[i, j-1][0]
-            print(n. i, j)
+            print(n, i, j)
             return (n, 0, 255 - n)
 
