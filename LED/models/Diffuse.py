@@ -9,6 +9,7 @@ class Diffuse(Model):
         self.d2B = np.zeros((self.width, self.width))
 
     def update(self) -> None:
+        print(self.d2A)
         for i in range(self.width):
             for j in range(self.width):
                 self.d2A[i, j] = self.d2A[i, j] + self.diff(i, j)
