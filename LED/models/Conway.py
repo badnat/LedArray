@@ -1,3 +1,4 @@
+from __future__ import annotations
 from Model import Model
 import numpy as np
 import sys

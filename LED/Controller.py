@@ -1,3 +1,4 @@
+from __future__ import annotations
 from View import View
 from Model import Model
 
