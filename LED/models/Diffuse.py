@@ -42,11 +42,11 @@ class Diffuse(Model):
         elif(i == 0):
             return -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
         elif(i == 15):
-            -3 * self.d2B[i, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
+            return -3 * self.d2B[i, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
         elif(j == 0):
-            -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1]
+            return -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1]
         elif(j == 15):
-            -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j - 1]
+            return -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j - 1]
         else:
-            -4 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
+            return -4 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
 
