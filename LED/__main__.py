@@ -12,7 +12,7 @@ def main():
     param = ""
     brightness = 0.05
     try:
-        brightness = sys.argv[1]
+        brightness = sys.argv[1]/100
         param = param + sys.argv[2]
     except IndexError:
         print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED Conway")
@@ -21,7 +21,7 @@ def main():
         print("possible params include : " + str(list(models.keys())))
     else:
         m: Model = models.get(param)(16)
-        v: View = View(16, 0.05, board.D12)
+        v: View = View(16, brightness, board.D12)
         c: Controller = Controller(m, v)
         c.setup()
         # handle setup args later
