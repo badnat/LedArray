@@ -13,7 +13,7 @@ def main():
     try:
         bars = np.zeros((width)).astype(int)
         for i in range(width):
-            bars[i] = sys.arv[i+1]
+            bars[i] = sys.argv[i+1]
         for j in range(width):
             for n in range(bars[j]):
                 pix2d[-1*(n+1) , j] = (int(255 * np.exp((-1/16) * j*2)), int(255 * np.exp((-1/16) * (j-8)*2)), int(255 * np.exp((-1/16) * (j-16)*2)))
