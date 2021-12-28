@@ -5,23 +5,25 @@ import sys
 class Diffuse(Model):
     def __init__(self, width: int):
         Model.__init__(self, width)
-        self.pix2 = np.zeros((self.width, self.width))
+        self.d2A = np.zeros((self.width, self.width))
+        self.d2B = np.zeros((self.width, self.width))
 
     def update(self) -> None:
-        self.pix2 = np.copy(self.pix2d)
         for i in range(self.width):
             for j in range(self.width):
-                u = self.pix2d[i, j] + self.diff(i, j)
-                print(u)
-                self.pix2d[i, j] = u
+                self.d2A[i, j] = self.2dA[i, j] + self.diff(i, j)
+                self.pix2d[i, j] = 255 * (self.d2A[i, j], 0, 1 - (self.d2A[i, j]))/40
+        self.d2B = np.copy(self.d2A)
 
     def setup(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
                 if(i == 8 and j == 8):
-                    self.pix2d[i, j] = (255, 0, 0)
+                    self.d2A = 1
+                    self.d2B = 1
                 else:
-                    self.pix2d[i, j] = (0, 0, 255)
+                    self.d2A = 0
+                    self.d2B = 0
     
     def help(self) -> None:
         print("This effect takes 2 params all probabilities from 0 to 100, <prob of led turning off> <prob of the led changing>")
@@ -29,30 +31,21 @@ class Diffuse(Model):
 # update Logic
     def diff(self, i, j):
         if(i == 0 and j == 0):
-            n = (-2 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i, j+1][0])/(4*255)
-            return (n, 0, n - 1)
+            return -2 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i, j + 1]
         elif(i == 0 and j == 15):
-            n = (-2 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i, j-1][0])/(4*255)
-            return (n, 0, n - 1)
+            return -2 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i, j - 1]
         elif(i == 15 and j == 15):
-            n = (-2 * self.pix2[i, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j-1][0])/(4*255)
-            return (n, 0, n - 1)
+            return -2 * self.d2B[i, j] + self.d2B[i - 1, j] + self.d2B[i, j - 1]
         elif(i == 15 and j == 0):
-            n = (-2 * self.pix2[i, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j+1][0])/(4*255)
-            return (n, 0, n - 1)
+            return -2 * self.d2B[i, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1]
         elif(i == 0):
-            n = (-3 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i, j+1][0] + self.pix2[i, j-1][0])/(4*255)
-            return (n, 0, n - 1)
+            return -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
         elif(i == 15):
-            n = (-3 * self.pix2[i, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j+1][0] + self.pix2[i, j-1][0])/(4*255)
-            return (n, 0, n - 1)
+            -3 * self.d2B[i, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
         elif(j == 0):
-            n = (-3 * self.pix2[i, j][0] + self.pix2[i, j+1][0] + self.pix2[i+1, j][0] + self.pix2[i-1, j][0])/(4*255)
-            return (n, 0, n - 1)
+            -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1]
         elif(j == 15):
-            n = (-3 * self.pix2[i, j][0] + self.pix2[i, j-1][0] + self.pix2[i+1, j][0] + self.pix2[i-1, j][0])/(4*255)
-            return (n, 0, n - 1)
+            -3 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j - 1]
         else:
-            n = (-4 * self.pix2[i, j][0] + self.pix2[i+1, j][0] + self.pix2[i-1, j][0] + self.pix2[i, j+1][0] + self.pix2[i, j-1][0])/(4*255)
-            return (n, 0, n - 1)
+            -4 * self.d2B[i, j] + self.d2B[i + 1, j] + self.d2B[i - 1, j] + self.d2B[i, j + 1] + self.d2B[i, j - 1]
 
