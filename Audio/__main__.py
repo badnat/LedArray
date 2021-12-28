@@ -5,6 +5,8 @@ import board
 import sys
 import neopixel
 
+pixPin = board.D12
+
 width = 16
 
 pix2d = np.zeros((width, width, 3))
