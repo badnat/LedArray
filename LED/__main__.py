@@ -15,7 +15,7 @@ def main():
         brightness = float(sys.argv[1])/100
         param = param + sys.argv[2]
     except IndexError:
-        print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED Conway")
+        print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED <brightness 0 to 100> Conway help")
         return
     if (param == "help"):
         print("possible params include : " + str(list(models.keys())))
