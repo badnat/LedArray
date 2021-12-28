@@ -6,7 +6,7 @@ from Controller import Controller
 import board
 import sys
 
-models = {"Conway": Conway.Conway, "MonteCarlo": MonteCarlo.MonteCarlo}
+models = {"Conway": Conway.Conway, "MonteCarlo": MonteCarlo.MonteCarlo, "Diffuse": Diffuse.Diffuse}
 
 def main():
     param = ""
