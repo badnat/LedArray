@@ -5,7 +5,7 @@ import board
 import sys
 import neopixel
 
-pixPin = board.D10
+pixPin = board.D12
 
 width = 16
 
