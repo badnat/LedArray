@@ -10,8 +10,10 @@ models = {"Conway": Conway.Conway, "MonteCarlo": MonteCarlo.MonteCarlo, "Diffuse
 
 def main():
     param = ""
+    brightness = 0.05
     try:
-        param = param + sys.argv[1]
+        brightness = sys.argv[1]
+        param = param + sys.argv[2]
     except IndexError:
         print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED Conway")
         return
