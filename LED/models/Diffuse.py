@@ -8,7 +8,6 @@ class Diffuse(Model):
         self.pix2 = np.zeros((self.width, self.width))
 
     def update(self) -> None:
-        print("updated")
         self.pix2 = np.copy(self.pix2d)
         for i in range(self.width):
             for j in range(self.width):
