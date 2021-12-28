@@ -18,7 +18,7 @@ class Diffuse(Model):
     def setup(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                if((i - 7.5)**2 + (j-7.5)**2) <= 6):
+                if((i - 7.5)**2 + (j-7.5)**2 <= 6):
                     self.d2A[i, j] = 1
                     self.d2B[i, j] = 1
                 else:
