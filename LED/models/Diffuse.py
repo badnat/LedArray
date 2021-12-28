@@ -18,7 +18,7 @@ class Diffuse(Model):
     def setup(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                if(j == 8):
+                if(i == 0 and j == 0):
                     self.pix2d[i, j] = (255, 0, 0)
                 else:
                     self.pix2d[i, j] = (0, 0, 255)
