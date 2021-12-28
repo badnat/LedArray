@@ -11,7 +11,7 @@ class Diffuse(Model):
         self.pix2 = np.copy(self.pix2d)
         for i in range(self.width):
             for j in range(self.width):
-                u = self.pix2d[i, j] + self.diff(i, j)
+                u = self.pix2d[i, j] - self.diff(i, j)
                 print(u)
                 self.pix2d[i, j] = u
 
