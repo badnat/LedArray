@@ -20,11 +20,11 @@ class Diffuse(Model):
         for i in range(self.width):
             for j in range(self.width):
                 if(i == 8 and j == 8):
-                    self.d2A = 1
-                    self.d2B = 1
+                    self.d2A[i, j] = 1
+                    self.d2B[i, j] = 1
                 else:
-                    self.d2A = 0
-                    self.d2B = 0
+                    self.d2A[i, j] = 0
+                    self.d2B[i, j] = 0
     
     def help(self) -> None:
         print("This effect takes 2 params all probabilities from 0 to 100, <prob of led turning off> <prob of the led changing>")
