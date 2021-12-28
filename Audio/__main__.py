@@ -31,8 +31,7 @@ def main():
             bars[i] = sys.argv[i+1]
         for j in range(width):
             for n in range(bars[j]):
-                print((int(255 * np.exp((-1/16) * j*2)), int(255 * np.exp((-1/16) * (j-8)*2)), int(255 * np.exp((-1/16) * (j-16)*2))))
-                pix2d[n , j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/16) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
+                pix2d[-1*(n+1) , j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
 
         update(pix2d, width)
 
