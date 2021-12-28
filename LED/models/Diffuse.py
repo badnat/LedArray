@@ -19,7 +19,7 @@ class Diffuse(Model):
     def setup(self) -> None:
         for i in range(self.width):
             for j in range(self.width):
-                if(i == 8 and j == 8):
+                if(j <= 8):
                     self.d2A[i, j] = 1
                     self.d2B[i, j] = 1
                 else:
