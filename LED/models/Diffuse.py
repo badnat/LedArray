@@ -5,7 +5,7 @@ import sys
 class Diffuse(Model):
     def __init__(self, width: int):
         Model.__init__(self, width)
-        self.pix2 = np.copy(self.pix2d)
+        self.pix2 = np.zeros((self.width, self.width))
 
     def update(self) -> None:
         self.pix2 = np.copy(self.pix2d)
