@@ -27,11 +27,12 @@ def main():
         time.sleep(1)
         try:
             while 1:
-                try:
-                    c.update()
-                except:
-                    break
+                # try:
+                #     c.update()
+                # except:
+                #     break
                 time.sleep(0.2)
+                c.update()
         except KeyboardInterrupt:
             c.clear()
             print("\n" + param + " has been interupted")
