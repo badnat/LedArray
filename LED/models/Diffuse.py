@@ -8,6 +8,7 @@ class Diffuse(Model):
         self.pix2 = np.zeros((self.width, self.width))
 
     def update(self) -> None:
+        print("updated")
         self.pix2 = np.copy(self.pix2d)
         for i in range(self.width):
             for j in range(self.width):
@@ -26,6 +27,7 @@ class Diffuse(Model):
     def diff(self, i, j):
         if(i == 0 and j == 0):
             n = -1 * self.pix2[i, j][1] + self.pix2[i+1, j][1] + self.pix2[i, j+1][1]
+            print(n)
             return (n, 0, 255 - n)
         elif(i == 0 and j == 15):
             n = -1 * self.pix2[i, j][1] + self.pix2[i+1, j][1] + self.pix2[i, j-1][1]
