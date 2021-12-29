@@ -19,10 +19,10 @@ class Conway(Model):
 
     def setup(self) -> None:
         try:
-            if (sys.argv[2] == "help"):
+            if (sys.argv[3] == "help"):
                 self.help()
             else:
-                self.setups.get(sys.argv[3])(self)
+                self.setups.get(sys.argv[4])(self)
         except IndexError:
             print("Conway Needs more params, use 'python3 LED <brightness 0 to 100> Conway help' for a list of params")
             return
