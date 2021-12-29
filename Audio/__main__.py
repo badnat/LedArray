@@ -26,8 +26,8 @@ def update(pix2d, width):
         pixels.show()
 
 def main():
-    while 1:
-        try:
+    try:
+        while 1:
             bars = np.zeros((width)).astype(int)
             bars = np.loadtxt("./Audio/amps", dtype=int)
             for j in range(width):
@@ -35,9 +35,11 @@ def main():
                     pix2d[-1*(n+1) , j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
 
             update(pix2d, width)
-        except KeyboardInterrupt:
-            print("Audio Visulizer Stopped")
-            return
+    except KeyboardInterrupt:
+        print("\nAudio Visulizer Stopped")
+        pixels.fill((0,0,0))
+        pixels.show()
+        return
 
 
 if __name__ == "__main__":
