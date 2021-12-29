@@ -14,7 +14,7 @@ def main():
     brightness = 0.05
     try:
         brightness = float(sys.argv[1])/100
-        delay = sys.argv[2]
+        delay = int(sys.argv[2]) / 100
         param = param + sys.argv[3]
     except IndexError:
         print("please add a param to select effect. use param <help> if you want a list of possible params! EX: python3 LED <brightness 0 to 100> <delay in milliseconds between frames> Conway help")
