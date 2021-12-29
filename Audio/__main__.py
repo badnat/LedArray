@@ -28,13 +28,13 @@ def update(pix2d, width):
 def main():
     try:
         while 1:
-            bars = np.zeros((width)).astype(int)
+            bars = np.zeros(width).astype(int)
             f = open("./Audio/amps", 'r')
             bars = f.readlines()
-            pixels.fill((0,0,0))
             for j in range(width):
-                for n in range(int(bars[j])):
-                    pix2d[-1*(n+1) , j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
+                for n in range(width):
+                    if (n > 16 - int(bars[j]))
+                    pix2d[n, j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
 
             update(pix2d, width)
     except KeyboardInterrupt:
