@@ -31,7 +31,8 @@ def main():
             bars = np.zeros(width).astype(int)
             f = open("./Audio/amps", 'r')
             bars = f.readlines()
-            print(sys.stdin)
+            for line in sys.stdin:
+                print(line)
             for j in range(width):
                 for n in range(width):
                     if (n > 15 - int(bars[j])):
