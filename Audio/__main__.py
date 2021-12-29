@@ -37,6 +37,7 @@ def main():
             update(pix2d, width)
         except KeyboardInterrupt:
             print("Audio Visulizer Stopped")
+            return
 
 
 if __name__ == "__main__":
