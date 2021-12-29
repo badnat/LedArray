@@ -33,8 +33,10 @@ def main():
             bars = f.readlines()
             for j in range(width):
                 for n in range(width):
-                    if (n > 16 - int(bars[j]))
-                    pix2d[n, j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
+                    if (n > 16 - int(bars[j])):
+                        pix2d[n, j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
+                    else:
+                        pix2d[n, j] = (0, 0, 0)
 
             update(pix2d, width)
     except KeyboardInterrupt:
