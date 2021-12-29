@@ -30,9 +30,9 @@ def main():
         while 1:
             bars = np.zeros((width)).astype(int)
             f = open("./Audio/amps", 'r')
-            bars = f.readlines().astype(int)
+            bars = f.readlines()
             for j in range(width):
-                for n in range(bars[j]):
+                for n in range(int(bars[j])):
                     pix2d[-1*(n+1) , j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
 
             update(pix2d, width)
