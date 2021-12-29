@@ -25,7 +25,6 @@ def main():
         v: View = View(16, brightness, board.D12)
         c: Controller = Controller(m, v)
         c.setup()
-        # handle setup args later
 
         time.sleep(1)
         try:
@@ -36,6 +35,7 @@ def main():
                 #     break
                 # time.sleep(0.2)
                 c.update()
+                time.sleep(0.1)
         except KeyboardInterrupt:
             c.clear()
             print("\n" + param + " has been interupted")
