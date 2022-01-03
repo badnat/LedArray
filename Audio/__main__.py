@@ -35,7 +35,7 @@ def main():
             # f = open("./Audio/amps", 'r')
             # bars = f.readlines()
             # for line in sys.stdin:
-            print(s.readline())
+            print(s.readlines())
 
             for j in range(width):
                 for n in range(width):
