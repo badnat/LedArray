@@ -27,7 +27,7 @@ def update(pix2d, width):
         pixels.show()
 
 def main():
-    s = serial.Serial(port='/dev/tty1' ,baudrate=115200)
+    s = serial.Serial(port='/dev/ttyAMA0' ,baudrate=115200)
     print(s.name)
     try:
         while 1:
