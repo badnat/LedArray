@@ -28,7 +28,7 @@ def update(pix2d, width):
 
 def main():
     s = serial.Serial(port='/dev/ttyS0' ,baudrate=115200)
-    
+    print(s.name)
     try:
         while 1:
             bars = np.zeros(width).astype(int)
