@@ -5,6 +5,7 @@ import board
 import sys
 import neopixel
 import os
+import serial
 
 pixPin = board.D12
 
@@ -26,12 +27,16 @@ def update(pix2d, width):
         pixels.show()
 
 def main():
+    s = serial.Serial(port='/dev/ttyS0' ,baudrate=115200)
+    
     try:
         while 1:
             bars = np.zeros(width).astype(int)
-            f = open("./Audio/amps", 'r')
-            bars = f.readlines()
-            for line in sys.stdin:
+            # f = open("./Audio/amps", 'r')
+            # bars = f.readlines()
+            # for line in sys.stdin:
+            print(s.readline())
+
             for j in range(width):
                 for n in range(width):
                     if (n > 15 - int(bars[j])):
