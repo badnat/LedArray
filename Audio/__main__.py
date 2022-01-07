@@ -35,13 +35,13 @@ def main():
     sock.bind(('0.0.0.0', 65000))
     try:
         while 1:
-            bars = np.zeros(width).astype(int)
             sock.sendto(struct.pack('I', 1), server_address)
             message, address = sock.recvfrom(4096)
-            print(struct.unpack('16I', message))
+            data = struct.unpack('16I', message)
+            print(data)
             for j in range(width):
                 for n in range(width):
-                    if (n > 15 - int(bars[j])):
+                    if (n > 15 - int(data[j])):
                         pix2d[n, j] = (int(255 * np.exp((-1/16) * j**2)), int(255 * np.exp((-1/8) * (j-8)**2)), int(255 * np.exp((-1/16) * (j-16)**2)))
                     else:
                         pix2d[n, j] = (0, 0, 0)
