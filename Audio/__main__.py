@@ -32,7 +32,7 @@ def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     host, port = '172.20.1.187', 65000
     server_address = (host, port)
-    # sock.bind(('172.20.1.187', 65000))
+    sock.bind(('0.0.0.0', 65000))
     try:
         while 1:
             bars = np.zeros(width).astype(int)
