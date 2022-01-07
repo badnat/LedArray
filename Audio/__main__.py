@@ -6,6 +6,8 @@ import sys
 import neopixel
 import os
 import serial
+import socket
+import struct
 
 pixPin = board.D12
 
@@ -27,16 +29,13 @@ def update(pix2d, width):
         pixels.show()
 
 def main():
-    s = serial.Serial(port='/dev/ttyAMA0' ,baudrate=115200)
-    print(s.name)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    host, port = '172.20.1.187', 65000
+    server_address = (host, port)
     try:
         while 1:
             bars = np.zeros(width).astype(int)
-            # f = open("./Audio/amps", 'r')
-            # bars = f.readlines()
-            # for line in sys.stdin:
-            print(s.readlines())
-
+            sock.sendto(pack('1i', 17))
             for j in range(width):
                 for n in range(width):
                     if (n > 15 - int(bars[j])):
