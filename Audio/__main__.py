@@ -35,7 +35,7 @@ def main():
     try:
         while 1:
             bars = np.zeros(width).astype(int)
-            sock.sendto(pack('1i', 17))
+            sock.sendto(struct.pack('1i', 17))
             for j in range(width):
                 for n in range(width):
                     if (n > 15 - int(bars[j])):
