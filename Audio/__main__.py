@@ -35,7 +35,7 @@ def main():
     try:
         while 1:
             bars = np.zeros(width).astype(int)
-            sock.sendto(struct.pack('1i', 17), server_address)
+            sock.sendto(struct.pack('1s', 'send'), server_address)
             for j in range(width):
                 for n in range(width):
                     if (n > 15 - int(bars[j])):
