@@ -46,7 +46,7 @@ def main():
                     else:
                         pix2d[n, j] = (0, 0, 0)
 
-            # update(pix2d, width)
+            update(pix2d, width)
     except KeyboardInterrupt:
         print("\nAudio Visulizer Stopped")
         pixels.fill((0,0,0))
