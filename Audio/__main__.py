@@ -35,7 +35,7 @@ def main():
     try:
         while 1:
             bars = np.zeros(width).astype(int)
-            sock.sendto(struct.pack('1i', 1), server_address)
+            sock.sendto(struct.pack('1f', 1), server_address)
             message, address = sock.recvfrom(4096)
             bars = struct.unpack('16i', message)
             for j in range(width):
