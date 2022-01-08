@@ -51,6 +51,7 @@ def main():
         print("\nAudio Visulizer Stopped")
         pixels.fill((0,0,0))
         pixels.show()
+        sock.close()
         return
 
 
