@@ -16,7 +16,7 @@ width = 16
 pix2d = np.zeros((width, width, 3))
 
 pixels = neopixel.NeoPixel(
-            pixPin, int(width**2), brightness=0.05, auto_write=False, pixel_order=neopixel.GRB
+            pixPin, int(width**2), brightness=0.01, auto_write=False, pixel_order=neopixel.GRB
         )
 
 def update(pix2d, width):     
